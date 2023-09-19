@@ -1,7 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Welcome B1 Pro.")
+    return render(request, 'main/home.html')
 
 
 # Create your views here.
