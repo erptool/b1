@@ -6,13 +6,15 @@
 </head>
 <body>
     <h1>Tips</h1>
+   
     <p>List of all tips currently in DB</p>
     <ul>
         {% for object in objects %}
             <li>{{ object.title }} - {{ object.details }} - {{ object.category }}</li>
         {% endfor %}
     </ul>
-    <button id="tipcreate" type="button">Click Me!</button>
+    <button id="tipcreate" type="button">SubmitTip</button>
+    
 </body>
 <script>
     document.getElementById('tipcreate').addEventListener('click', function() {

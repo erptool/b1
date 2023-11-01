@@ -1,5 +1,5 @@
 from django.db import models
-from attachments.models import Attachment
+#from attachments.models import Attachment
 #from attachments.field import AttachmentField
 
 #class TipAttachments(models.Model):

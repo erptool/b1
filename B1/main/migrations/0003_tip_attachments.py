@@ -6,8 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('attachments', '0005_object_id_charfield'),
-        ('main', '0002_tip_category'),
+            ('main', '0002_tip_category'),
     ]
 
     operations = [
