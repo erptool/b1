@@ -3,11 +3,11 @@ from .forms import TipForm, SearchForm
 from django.http import HttpResponse
 from .models import Tip
 from django.db.models import Q
+from django.views.generic import DetailView
 
 def index(request):
      objects = Tip.objects.all()
      return render(request, 'main/index.html', {'objects': objects})
-
 
 def TipView(request):
     objects = Tip.objects.all()
@@ -34,6 +34,9 @@ def search_view(request):
         results = Tip.objects.all()
     return render(request, 'main/search_results.html', {'form': form, 'results': results})
 
-
+class ObjectDetailView(DetailView):
+    model = Tip
+    template_name = 'main/object_detail.html'
+    context_object_name = 'object'
 
 # Create your views here.

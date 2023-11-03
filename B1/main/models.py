@@ -15,6 +15,8 @@ class Tip(models.Model):
     ]
     category = models.CharField(max_length=100, choices=CHOICES)
     file_attachment = models.FileField(upload_to='main/attachments/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
     
 
 # Create your models here.

@@ -51,6 +51,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+MEDIA_URL = '/main/attachments/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'attachments')
+
 ROOT_URLCONF = 'B1.urls'
 
 TEMPLATES = [
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Belgrade'
+TIME_ZONE = 'Europe/Lisbon'
 
 USE_I18N = True
 

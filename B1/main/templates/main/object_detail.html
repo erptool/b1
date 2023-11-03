@@ -1,0 +1,17 @@
+<!-- appname/home.html -->
+{% load custom_filters.py %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Detail</title>
+</head>
+<body>
+    <h1>The following details of the object are</h1>
+    <p>{{ object.title }}</p>
+    <p>{{ object.details }}</p>
+    <p>{{ object.category }}</p>
+    <p>{{ object.file_attachment }}</p>
+    <a href="{{ object.file_attachment.url }}" download>{{ object.attachment.name|filename }}</a>
+    <p>{{ object.created_at }}</p>
+</body>
+</html>

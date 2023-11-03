@@ -10,7 +10,9 @@
     <p>List of all tips currently in DB</p>
     <ul>
         {% for object in objects %}
-            <li>{{ object.title }} - {{ object.details }} - {{ object.category }}</li>
+            <li>
+                <a href="{% url 'object_detail' object.pk %}">{{ object.title }}</a>
+            </li>
         {% endfor %}
     </ul>
     <button id="tipcreate" type="button">SubmitTip</button>
