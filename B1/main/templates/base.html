@@ -1,0 +1,48 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your common meta tags, CSS, and other header content here -->
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Add your navbar content here -->
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div>
+            <div>
+                <div>
+                    <a href="/"><img src="icon_computer.png" alt="Your Logo"></a>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+                <p>1234 Main Street, City, State, ZIP</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

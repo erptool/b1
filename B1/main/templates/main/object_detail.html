@@ -1,5 +1,5 @@
 <!-- appname/home.html -->
-{% load custom_filters.py %}
+{% load cusfil %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +10,7 @@
     <p>{{ object.title }}</p>
     <p>{{ object.details }}</p>
     <p>{{ object.category }}</p>
-    <p>{{ object.file_attachment }}</p>
-    <a href="{{ object.file_attachment.url }}" download>{{ object.attachment.name|filename }}</a>
+    <a href="{{ object.file_attachment.url }}" download="{{ object.attachment.name|filename }}">{{ object.attachment.name| filename }} Download Package</a>
     <p>{{ object.created_at }}</p>
 </body>
 </html>

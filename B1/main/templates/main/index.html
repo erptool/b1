@@ -1,6 +1,8 @@
 <!-- appname/home.html -->
 <!DOCTYPE html>
 <html>
+    {% extends "base.html" %}
+    {% block content %}
 <head>
     <title>Tips</title>
 </head>
@@ -27,4 +29,5 @@
       window.location.href = targetUrl;
     });
   </script>
+  {% endblock %}
 </html>
