@@ -2,6 +2,8 @@
 {% load cusfil %}
 <!DOCTYPE html>
 <html>
+    {% extends "base.html" %}
+    {% block content %}
 <head>
     <title>Object Detail</title>
 </head>
@@ -13,4 +15,5 @@
     <a href="{{ object.file_attachment.url }}" download="{{ object.attachment.name|filename }}">{{ object.attachment.name| filename }} Download Package</a>
     <p>{{ object.created_at }}</p>
 </body>
+{% endblock %}
 </html>

@@ -1,6 +1,8 @@
 <!-- appname/home.html -->
 <!DOCTYPE html>
 <html>
+    {% extends "base.html" %}
+    {% block content %}
 <head>
     <title>Search Results</title>
 </head>
@@ -17,4 +19,5 @@
         {% endfor %}
     </ul>
 </body>
+{% endblock %}
 </html>

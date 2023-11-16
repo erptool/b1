@@ -1,6 +1,8 @@
 <!-- appname/home.html -->
 <!DOCTYPE html>
 <html>
+    {% extends "base.html" %}
+    {% block content %}
 <head>
     <title>My Django App</title>
 </head>
@@ -18,4 +20,5 @@
         {% endfor %}
     </ul>
 </body>
+    {% endblock %}
 </html>

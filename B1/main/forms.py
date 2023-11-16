@@ -7,7 +7,11 @@ class TipForm(forms.ModelForm):
         fields = ['category', 'title', 'details', 'file_attachment' ]
 
 class SearchForm(forms.Form):
-    query = forms.CharField(label='Search', max_length=100)
+    query = forms.CharField(
+        max_length=100,
+        label='Search',
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
     
 
 #class AttachmentsForm(forms.ModelForm):
