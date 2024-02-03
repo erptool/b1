@@ -6,7 +6,10 @@
 <head>
     <title>Tips</title>
 </head>
-<body>
+<body> 
+
+  
+
     <h1>Tips</h1>   
     <p>List of all tips currently in DB</p>
     <ul>
@@ -17,6 +20,11 @@
         {% endfor %}
     </ul>
     <button id="tipcreate" type="button">SubmitTip</button>
+    <form method="post" action="{% url 'search_view' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">New Search</button>
+    </form>
     
 </body>
 <script>

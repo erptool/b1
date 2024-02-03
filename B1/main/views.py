@@ -21,18 +21,15 @@ def TipView(request):
     return render(request, 'main/home.html', {'form': form})    
 
 def search_view(request):
-    if request.method == 'GET':
-        form = SearchForm(request.GET)
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
         if form.is_valid():
-            query = form.cleaned_data['query']
-            print(f"Query: {query}")
-            results = Tip.objects.filter(Q(title__contains=query))
-        else:
-            results = Tip.objects.all()
+            search_text = form.cleaned_data['search_text']
+            results = Tip.objects.filter(title=search_text)
+            return render(request, 'main/index.html', {'form': form, 'results': results})
     else:
         form = SearchForm()
-        results = Tip.objects.all()
-    return render(request, 'main/search_results.html', {'form': form, 'results': results})
+    return render(request, 'main/index.html', {'form': form})
 
 class ObjectDetailView(DetailView):
     model = Tip
