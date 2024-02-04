@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 #from attachments.models import Attachment
 #from attachments.field import AttachmentField
 
@@ -17,6 +18,10 @@ class Tip(models.Model):
     file_attachment = models.FileField(upload_to='main/attachments/')
     created_at = models.DateTimeField(auto_now_add=True)
 
+    @classmethod
+    def search(cls, query):
+        return cls.objects.filter(title__icontains=query)
     
-
+    def get_absolute_url(self):
+        return reverse('detail_view', args=[str(self.id)])
 # Create your models here.

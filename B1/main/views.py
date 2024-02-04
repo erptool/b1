@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .forms import TipForm, SearchForm
 from django.http import HttpResponse
 from .models import Tip
@@ -21,15 +21,18 @@ def TipView(request):
     return render(request, 'main/home.html', {'form': form})    
 
 def search_view(request):
-    if request.method == 'POST':
-        form = SearchForm(request.POST)
-        if form.is_valid():
-            search_text = form.cleaned_data['search_text']
-            results = Tip.objects.filter(title=search_text)
-            return render(request, 'main/index.html', {'form': form, 'results': results})
-    else:
-        form = SearchForm()
-    return render(request, 'main/index.html', {'form': form})
+    query = request.GET.get('search', '')
+    results = []
+
+    if query:
+        results = Tip.search(query)
+
+    context = {'results': results, 'query': query}
+    return render(request, 'main/search_results.html', context)
+
+def detail_view(request, pk):
+    obj = get_object_or_404(Tip, pk=pk)
+    return render(request, 'main/object_detail.html', {'obj': obj})
 
 class ObjectDetailView(DetailView):
     model = Tip

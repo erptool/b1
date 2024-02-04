@@ -9,11 +9,11 @@
 </head>
 <body>
     <h1>The following details of the object are</h1>
-    <p>{{ object.title }}</p>
-    <p>{{ object.details }}</p>
-    <p>{{ object.category }}</p>
-    <a href="{{ object.file_attachment.url }}" download="{{ object.attachment.name|filename }}">{{ object.attachment.name| filename }} Download Package</a>
-    <p>{{ object.created_at }}</p>
+    <p>{{ obj.title }}</p>
+    <p>{{ obj.details }}</p>
+    <p>{{ obj.category }}</p>
+    <a href="{{ obj.file_attachment.url }}" download="{{ obj.attachment.name|filename }}">{{ obj.attachment.name| filename }} Download Package</a>
+    <p>{{ obj.created_at }}</p>
 </body>
 {% endblock %}
 </html>

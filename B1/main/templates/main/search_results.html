@@ -7,17 +7,14 @@
     <title>Search Results</title>
 </head>
 <body>
-    <form method="get">
-        {{ form.as_p }}
-        <button type="submit">Search</button>
-    </form>    
-    <ul>
-        {% for result in results %}
-            <li>{{ result.title }}</li>
-        {% empty %}
-            <li>No results found.</li>
-        {% endfor %}
-    </ul>
+    {% if query %}
+            <h2>Search Results for "{{ query }}"</h2>
+            <ul>
+                {% for result in results %}
+                    <li><a href="{{ result.get_absolute_url }}">{{ result.title }} - {{ result.details }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 </body>
 {% endblock %}
 </html>
